@@ -1,5 +1,5 @@
 {
-  "name": "nextn",
+  "name": "journey",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -47,7 +47,6 @@
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "next": "15.3.8",
-    "patch-package": "^8.0.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
@@ -58,12 +57,19 @@
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
   },
+  "overrides": {
+    "rimraf": "^4.0.0",
+    "glob": "^9.0.0",
+    "inflight": "^1.0.6"
+  },
   "devDependencies": {
     "@types/geojson": "^7946.0.16",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20.19.32",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
     "genkit-cli": "^1.14.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
