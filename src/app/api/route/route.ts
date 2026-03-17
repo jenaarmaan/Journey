@@ -5,10 +5,13 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { origin: startCoords, destination: endCoords } = body;
     const apiKey = process.env.NEXT_PUBLIC_ORS_API_KEY;
-
-    if (!apiKey) {
-      console.error("❌ ORS API Key is missing. Please check your .env file.");
-      return NextResponse.json({ error: 'API key is missing' }, { status: 500 });
+    
+    if (!apiKey || apiKey === "YOUR_API_KEY_HERE") {
+      console.error("❌ ORS API Key is missing or using placeholder. Please update your .env file.");
+      return NextResponse.json({ 
+        error: 'API key is missing or invalid',
+        instructions: "Please add a valid NEXT_PUBLIC_ORS_API_KEY to your .env file."
+      }, { status: 401 });
     }
 
     if (!startCoords || !Array.isArray(startCoords) || startCoords.length !== 2 || !endCoords || !Array.isArray(endCoords) || endCoords.length !== 2) {

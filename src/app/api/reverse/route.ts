@@ -15,7 +15,8 @@ export async function GET(request: Request) {
   try {
     const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`, {
       headers: {
-        'User-Agent': 'JourneyMaps/1.0 (journey@example.com)' // <-- REQUIRED
+        'User-Agent': 'JourneyApp/1.0 (contact@journey.example.com)',
+        'Referer': request.url
       }
     });
 
